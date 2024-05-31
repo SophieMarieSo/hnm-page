@@ -2,14 +2,17 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login({ setAuth }) {
+    const navigate = useNavigate();
     return (
         <Container>
             <Form
                 onSubmit={(e) => {
                     e.preventDefault();
                     setAuth(true);
+                    navigate('/');
                 }}
             >
                 <Form.Group className='mb-3' controlId='formBasicEmail'>
