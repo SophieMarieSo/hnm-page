@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import ProductCard from '../component/ProductCard';
 
 export default function ProductAll() {
     const [productList, setProductList] = useState([]);
@@ -16,7 +18,15 @@ export default function ProductAll() {
 
     return (
         <div>
-            <h1>전체 상품 페이지</h1>
+            <Container>
+                <Row>
+                    {productList.map((product, idx) => (
+                        <Col lg={3} key={idx}>
+                            <ProductCard product={product} />
+                        </Col>
+                    ))}
+                </Row>
+            </Container>
         </div>
     );
 }

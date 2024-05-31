@@ -40,3 +40,22 @@
 .search {
     border: none;
 }
+
+/* ProductCard */
+.product-card {
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: scale(1.01);
+    transition: transform 0.2s ease-in;
+}
+
+.product-price {
+    font-weight: bold;
+}
+
+.new-product {
+    color: violet;
+    font-weight: bold;
+}
