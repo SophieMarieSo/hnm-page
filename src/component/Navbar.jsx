@@ -34,8 +34,8 @@ export default function Navbar() {
             {/* menu-item */}
             <div className='menu-section'>
                 <ul className='menu-list'>
-                    {menuList.map((menu) => (
-                        <li>{menu}</li>
+                    {menuList.map((menu, idx) => (
+                        <li key={idx}>{menu}</li>
                     ))}
                 </ul>
                 <div className='search-section'>
