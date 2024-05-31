@@ -4,7 +4,7 @@ export default function ProductCard({ product }) {
     return (
         <div className='product-card'>
             <img src={product?.img} alt='' />
-            <div className={product?.new && 'new-product'}>
+            <div className={product?.new.toString() && 'new-product'}>
                 {product?.new ? '🎉신제품🎉' : null}
             </div>
             <div>{product?.choice ? 'Concious Choice' : null}</div>
