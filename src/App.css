@@ -1,74 +1,80 @@
 /* Navbar */
 .login-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px;
 }
 
 .login-button-container {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .login-button-container:hover {
-    transform: scale(1.05);
-    transition: transform 0.05s;
-    font-weight: bold;
+  transform: scale(1.05);
+  transition: transform 0.05s;
+  font-weight: bold;
 }
 
 .login-button {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 .logo-section {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .menu-section {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .menu-list {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 .menu-list li {
-    padding: 10px;
+  padding: 10px;
 }
 
 .search-section {
-    border-bottom: 2px solid darkgray;
-    align-self: center;
-    padding: 4px;
-    position: absolute;
-    right: 20px;
+  border-bottom: 2px solid darkgray;
+  align-self: center;
+  padding: 4px;
+  position: absolute;
+  right: 20px;
 }
 
 .search {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 
 /* ProductCard */
 .product-card {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .product-card:hover {
-    transform: scale(1.01);
-    transition: transform 0.2s ease-in;
+  transform: scale(1.01);
+  transition: transform 0.2s ease-in;
 }
 
 .product-price {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .new-product {
-    color: coral;
-    font-weight: bold;
+  color: coral;
+  font-weight: bold;
+}
+
+/* Product Detail */
+.product-img {
+  display: flex;
+  justify-content: end;
 }

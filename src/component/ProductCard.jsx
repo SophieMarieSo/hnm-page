@@ -15,7 +15,7 @@ export default function ProductCard({ product }) {
       <div className={product?.new.toString() && 'new-product'}>
         {product?.new ? '🎉신제품🎉' : null}
       </div>
-      <div>{product?.choice ? 'Concious Choice' : null}</div>
+      <div>{product?.choice ? 'Conscious Choice' : null}</div>
       <h5>{product?.title}</h5>
       <div className='product-price'>₩ {product?.price}</div>
     </div>
