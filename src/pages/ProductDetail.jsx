@@ -32,13 +32,13 @@ export default function ProductDetail() {
         <Col>
           <h3>{product?.title}</h3>
           <div
-            className={product?.new.toString() && 'new-product'}
+            className={product?.new && 'new-product'}
             style={{ marginBottom: 4 }}
           >
-            {product.new ? '🎉신제품🎉' : null}
+            {product?.new ? '🎉신제품🎉' : null}
           </div>
           <h5>₩ {product?.price}</h5>
-          <div>{product.choice ? 'Conscious Choice' : null}</div>
+          <div>{product?.choice ? 'Conscious Choice' : null}</div>
           <DropdownButton
             title='사이즈 선택'
             data-bs-theme='dark'
