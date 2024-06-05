@@ -17,6 +17,10 @@ export default function Navbar() {
         '지속가능성',
     ];
 
+    const search = (value) => {
+        navigate(`/?q=${value}`);
+    };
+
     return (
         <div>
             {/* login */}
@@ -50,7 +54,13 @@ export default function Navbar() {
                 </ul>
                 <div className='search-section'>
                     <FontAwesomeIcon icon={faSearch} />
-                    <input type='text' className='search' />
+                    <input
+                        type='text'
+                        className='search'
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') search(e.target.value);
+                        }}
+                    />
                 </div>
             </div>
         </div>
