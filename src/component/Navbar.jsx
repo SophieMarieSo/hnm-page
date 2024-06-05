@@ -28,11 +28,18 @@ export default function Navbar({ auth, setAuth }) {
                 <div
                     className='login-button-container'
                     onClick={() => {
-                        navigate('/login');
+                        if (auth) {
+                            navigate('/');
+                            setAuth(false);
+                        } else {
+                            navigate('/login');
+                        }
                     }}
                 >
                     <FontAwesomeIcon icon={faUser} />
-                    <div className='login-button'>로그인</div>
+                    <div className='login-button'>
+                        {auth ? '로그아웃' : '로그인'}
+                    </div>
                 </div>
             </div>
 
