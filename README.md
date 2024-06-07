@@ -29,3 +29,9 @@
 `nodeJs` `mongoDb` 로 백엔드 구현 후 로그인 기능 완성
 
 (현재는 단순하게 state로 간단하게 구현되어 있음)
+
+반응형 고려해서 UI 리팩토링
+
+try-catch로 에러 관리하기
+
+비동기 처리로 인한 loading process 보여주기
