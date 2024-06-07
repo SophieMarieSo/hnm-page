@@ -5,31 +5,31 @@ import ProductCard from '../component/ProductCard';
 import { useSearchParams } from 'react-router-dom';
 
 export default function ProductAll() {
-    const [productList, setProductList] = useState([]);
-    const [query, setQuery] = useSearchParams();
+  const [productList, setProductList] = useState([]);
+  const [query, setQuery] = useSearchParams();
 
-    useEffect(() => {
-        getProducts();
-    }, [query]);
+  useEffect(() => {
+    getProducts();
+  }, [query]);
 
-    const getProducts = async () => {
-        const searchQuery = query.get('q') || '';
-        const url = `http://localhost:5000/products?q=${searchQuery}`;
-        const res = await axios.get(url);
-        setProductList(res.data);
-    };
+  const getProducts = async () => {
+    const searchQuery = query.get('q') || '';
+    const url = `http://localhost:5000/products?q=${searchQuery}`;
+    const res = await axios.get(url);
+    setProductList(res.data);
+  };
 
-    return (
-        <div>
-            <Container>
-                <Row>
-                    {productList.map((product, idx) => (
-                        <Col lg={3} key={idx}>
-                            <ProductCard product={product} />
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
-        </div>
-    );
+  return (
+    <div>
+      <Container>
+        <Row>
+          {productList.map((product, idx) => (
+            <Col md={3} sm={12} key={idx}>
+              <ProductCard product={product} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </div>
+  );
 }

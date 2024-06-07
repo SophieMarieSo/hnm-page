@@ -26,10 +26,10 @@ export default function ProductDetail() {
   return (
     <Container>
       <Row>
-        <Col className='product-img'>
+        <Col xs={12} md={6} className='product-img'>
           <img src={product?.img} alt='' />
         </Col>
-        <Col>
+        <Col xs={12} md={6}>
           <h3>{product?.title}</h3>
           <div
             className={product?.new && 'new-product'}
