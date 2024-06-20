@@ -1,35 +1,35 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import ProductCard from '../component/ProductCard';
 import { useSearchParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { productAction } from '../redux/actions/productAction';
 
 export default function ProductAll() {
-  const [productList, setProductList] = useState([]);
-  const [query, setQuery] = useSearchParams();
+    const [query, setQuery] = useSearchParams();
+    const dispatch = useDispatch();
+    const productList = useSelector((state) => state.productList);
 
-  useEffect(() => {
-    getProducts();
-  }, [query]);
+    useEffect(() => {
+        getProducts();
+    }, [query]);
 
-  const getProducts = async () => {
-    const searchQuery = query.get('q') || '';
-    const url = `http://localhost:5000/products?q=${searchQuery}`;
-    const res = await axios.get(url);
-    setProductList(res.data);
-  };
+    const getProducts = () => {
+        const searchQuery = query.get('q') || '';
+        dispatch(productAction.getProducts(searchQuery));
+    };
 
-  return (
-    <div>
-      <Container>
-        <Row>
-          {productList.map((product, idx) => (
-            <Col md={3} sm={12} key={idx}>
-              <ProductCard product={product} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
-    </div>
-  );
+    return (
+        <div>
+            <Container>
+                <Row>
+                    {productList.map((product, idx) => (
+                        <Col md={3} sm={12} key={idx}>
+                            <ProductCard product={product} />
+                        </Col>
+                    ))}
+                </Row>
+            </Container>
+        </div>
+    );
 }
