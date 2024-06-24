@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { authAction } from '../redux/actions/authAction';
 
-export default function Navbar({ auth, setAuth }) {
+export default function Navbar() {
     const navigate = useNavigate();
+    const auth = useSelector((state) => state.auth.auth);
+    const dispatch = useDispatch();
     const menuList = [
         '여성',
         'Divided',
@@ -30,7 +34,7 @@ export default function Navbar({ auth, setAuth }) {
                     onClick={() => {
                         if (auth) {
                             navigate('/');
-                            setAuth(false);
+                            dispatch(authAction.logout());
                         } else {
                             navigate('/login');
                         }

@@ -1,7 +1,9 @@
 import React from 'react';
 import ProductDetail from '../pages/ProductDetail';
 import { Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-export default function PrivateRoute({ auth }) {
-  return auth ? <ProductDetail /> : <Navigate to={'/login'} />;
+export default function PrivateRoute() {
+    const auth = useSelector((state) => state.auth.auth);
+    return auth ? <ProductDetail /> : <Navigate to={'/login'} />;
 }

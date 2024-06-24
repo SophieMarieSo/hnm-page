@@ -8,4 +8,15 @@ function getProducts(searchQuery) {
     };
 }
 
-export const productAction = { getProducts };
+function getProductDetail(id) {
+    return async (dispatch, getState) => {
+        const url = `http://localhost:5000/products/${id}`;
+        const res = await axios.get(url);
+        dispatch({
+            type: 'GET_PRODUCT_DETAIL_SUCCESS',
+            payload: { data: res.data },
+        });
+    };
+}
+
+export const productAction = { getProducts, getProductDetail };
